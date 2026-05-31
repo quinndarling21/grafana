@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { type CommandPaletteAction } from '../types';
 
-import { getRecentDashboardActions } from './dashboardActions';
+import { getRecentDashboardActions, getStarredDashboardActions } from './dashboardActions';
 import { useStaticActions } from './staticActions';
 import useExtensionActions from './useExtensionActions';
 
@@ -32,4 +32,17 @@ export function useRegisterRecentDashboardsActions() {
   }, []);
 
   useRegisterActions(recentDashboardActions, [recentDashboardActions]);
+}
+
+export function useRegisterStarredDashboardsActions() {
+  const [starredDashboardActions, setStarredDashboardActions] = useState<CommandPaletteAction[]>([]);
+  useEffect(() => {
+    getStarredDashboardActions()
+      .then((starredDashboardActions) => setStarredDashboardActions(starredDashboardActions))
+      .catch((err) => {
+        console.error('Error loading starred dashboard actions', err);
+      });
+  }, []);
+
+  useRegisterActions(starredDashboardActions, [starredDashboardActions]);
 }

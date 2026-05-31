@@ -7,10 +7,16 @@ import impressionSrv from 'app/core/services/impression_srv';
 import { getGrafanaSearcher } from 'app/features/search/service/searcher';
 import { type DashboardQueryResult, type QueryResponse } from 'app/features/search/service/types';
 
-import { getRecentDashboardActions, getSearchResultActions, useSearchResults } from './dashboardActions';
+import {
+  getRecentDashboardActions,
+  getSearchResultActions,
+  getStarredDashboardActions,
+  useSearchResults,
+} from './dashboardActions';
 
 describe('dashboardActions', () => {
   let grafanaSearcherSpy: jest.SpyInstance;
+  let grafanaStarredSearcherSpy: jest.SpyInstance;
   let mockContextSrv: jest.MockedObjectDeep<ContextSrv>;
   const mockRecentDashboardUids = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
@@ -44,9 +50,17 @@ describe('dashboardActions', () => {
     view: new DataFrameView<DashboardQueryResult>(searchData),
   };
 
+  const emptySearchResult: QueryResponse = {
+    isItemLoaded: jest.fn(),
+    loadMoreItems: jest.fn(),
+    totalRows: 0,
+    view: new DataFrameView<DashboardQueryResult>({ fields: [], length: 0 }),
+  };
+
   beforeAll(() => {
     mockContextSrv = jest.mocked(contextSrv);
     grafanaSearcherSpy = jest.spyOn(getGrafanaSearcher(), 'search').mockResolvedValue(mockSearchResult);
+    grafanaStarredSearcherSpy = jest.spyOn(getGrafanaSearcher(), 'starred').mockResolvedValue(mockSearchResult);
   });
 
   afterEach(() => {
@@ -95,6 +109,57 @@ describe('dashboardActions', () => {
             url: '/my-dashboard-1',
           },
         ]);
+      });
+    });
+  });
+
+  describe('getStarredDashboardActions', () => {
+    describe('when not signed in', () => {
+      beforeAll(() => {
+        mockContextSrv.user.isSignedIn = false;
+      });
+
+      it('returns an empty array and does not call the search backends', async () => {
+        const results = await getStarredDashboardActions();
+        expect(grafanaSearcherSpy).not.toHaveBeenCalled();
+        expect(grafanaStarredSearcherSpy).not.toHaveBeenCalled();
+        expect(results).toEqual([]);
+      });
+    });
+
+    describe('when signed in', () => {
+      beforeAll(() => {
+        mockContextSrv.user.isSignedIn = true;
+      });
+
+      it('calls the starred search backend and returns an array of CommandPaletteActions', async () => {
+        const results = await getStarredDashboardActions();
+        expect(grafanaStarredSearcherSpy).toHaveBeenCalledWith({
+          kind: ['dashboard'],
+          starred: true,
+          limit: 50,
+        });
+        expect(results).toEqual([
+          {
+            id: 'starred-dashboards/my-dashboard-1',
+            name: 'My dashboard 1',
+            priority: 7,
+            section: 'Starred dashboards',
+            subtitle: 'My folder 1',
+            url: '/my-dashboard-1',
+          },
+        ]);
+      });
+
+      it('returns an empty array when there are no starred dashboards', async () => {
+        grafanaStarredSearcherSpy.mockResolvedValueOnce(emptySearchResult);
+        const results = await getStarredDashboardActions();
+        expect(grafanaStarredSearcherSpy).toHaveBeenCalledWith({
+          kind: ['dashboard'],
+          starred: true,
+          limit: 50,
+        });
+        expect(results).toEqual([]);
       });
     });
   });
