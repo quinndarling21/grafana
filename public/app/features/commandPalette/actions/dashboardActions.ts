@@ -8,10 +8,11 @@ import { getRecentlyViewedDashboards } from 'app/features/browse-dashboards/api/
 import { getGrafanaSearcher } from 'app/features/search/service/searcher';
 
 import { type CommandPaletteAction } from '../types';
-import { RECENT_DASHBOARDS_PRIORITY, SEARCH_RESULTS_PRIORITY } from '../values';
+import { RECENT_DASHBOARDS_PRIORITY, SEARCH_RESULTS_PRIORITY, STARRED_DASHBOARDS_PRIORITY } from '../values';
 
 const MAX_SEARCH_RESULTS = 100;
 const MAX_RECENT_DASHBOARDS = 5;
+const MAX_STARRED_DASHBOARDS = 50;
 
 const debouncedSearch = debounce(getSearchResultActions, 200);
 
@@ -34,6 +35,32 @@ export async function getRecentDashboardActions(): Promise<CommandPaletteAction[
   });
 
   return recentDashboardActions;
+}
+
+export async function getStarredDashboardActions(): Promise<CommandPaletteAction[]> {
+  if (!contextSrv.user.isSignedIn) {
+    return [];
+  }
+
+  const data = await getGrafanaSearcher().starred({
+    kind: ['dashboard'],
+    starred: true,
+    limit: MAX_STARRED_DASHBOARDS,
+  });
+
+  const starredDashboardActions: CommandPaletteAction[] = data.view.map((item) => {
+    const { url, name, location } = item; // items are backed by DataFrameView, so must hold the url in a closure
+    return {
+      id: `starred-dashboards${url}`,
+      name: `${name}`,
+      section: t('command-palette.section.starred-dashboards', 'Starred dashboards'),
+      priority: STARRED_DASHBOARDS_PRIORITY,
+      url,
+      subtitle: data.view.dataFrame.meta?.custom?.locationInfo[location]?.name,
+    };
+  });
+
+  return starredDashboardActions.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export async function getSearchResultActions(searchQuery: string): Promise<CommandPaletteAction[]> {
