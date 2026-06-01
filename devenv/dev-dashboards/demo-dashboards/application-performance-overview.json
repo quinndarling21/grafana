@@ -22,8 +22,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -66,7 +66,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -77,14 +79,56 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "SLO",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "99.94,99.95,99.96,99.93,99.97,99.96,99.98"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "SLO",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    99.94,
+                    99.95,
+                    99.96,
+                    99.93,
+                    99.97,
+                    99.96,
+                    99.98
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "API availability SLO",
@@ -92,8 +136,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -134,7 +178,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -145,14 +191,60 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Requests",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "490,520,610,680,640,700,730,710,690"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Requests",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    490,
+                    520,
+                    610,
+                    680,
+                    640,
+                    700,
+                    730,
+                    710,
+                    690
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Current request rate",
@@ -160,8 +252,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -202,7 +294,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -213,14 +307,60 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "p95 latency",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "240,255,280,310,295,330,350,320,305"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "p95 latency",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    240,
+                    255,
+                    280,
+                    310,
+                    295,
+                    330,
+                    350,
+                    320,
+                    305
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "p95 latency",
@@ -228,8 +368,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -270,7 +410,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -281,14 +423,60 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "5xx rate",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "0.2,0.4,0.6,0.8,1.1,0.9,0.7,0.5,0.4"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "5xx rate",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    0.2,
+                    0.4,
+                    0.6,
+                    0.8,
+                    1.1,
+                    0.9,
+                    0.7,
+                    0.5,
+                    0.4
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "5xx error rate",
@@ -296,8 +484,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -364,7 +552,9 @@
       "maxDataPoints": 400,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -378,46 +568,96 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "checkout-api",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "max": 900,
-          "min": 250,
-          "noise": 35,
           "refId": "A",
-          "scenarioId": "random_walk",
-          "spread": 18,
-          "startValue": 520
-        },
-        {
-          "alias": "catalog-api",
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "max": 1100,
-          "min": 400,
-          "noise": 45,
-          "refId": "B",
-          "scenarioId": "random_walk",
-          "spread": 20,
-          "startValue": 720
-        },
-        {
-          "alias": "payments-api",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "max": 700,
-          "min": 150,
-          "noise": 28,
-          "refId": "C",
-          "scenarioId": "random_walk",
-          "spread": 16,
-          "startValue": 410
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "checkout-api",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  },
+                  {
+                    "name": "catalog-api",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  },
+                  {
+                    "name": "payments-api",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    520,
+                    560,
+                    610,
+                    650,
+                    690,
+                    710,
+                    680,
+                    640,
+                    620
+                  ],
+                  [
+                    720,
+                    760,
+                    810,
+                    860,
+                    830,
+                    900,
+                    940,
+                    910,
+                    870
+                  ],
+                  [
+                    410,
+                    430,
+                    470,
+                    510,
+                    490,
+                    530,
+                    560,
+                    520,
+                    500
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Request throughput by service",
@@ -425,8 +665,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -497,7 +737,9 @@
       "maxDataPoints": 400,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -511,34 +753,96 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "p50",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "72,75,79,83,87,91,89,86,82,78"
-        },
-        {
-          "alias": "p95",
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "refId": "B",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "210,230,260,290,320,350,330,310,285,255"
-        },
-        {
-          "alias": "p99",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "refId": "C",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "320,360,410,470,520,560,530,490,430,390"
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "p50",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  },
+                  {
+                    "name": "p95",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  },
+                  {
+                    "name": "p99",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    72,
+                    75,
+                    79,
+                    83,
+                    87,
+                    91,
+                    89,
+                    86,
+                    82
+                  ],
+                  [
+                    210,
+                    230,
+                    260,
+                    290,
+                    320,
+                    350,
+                    330,
+                    310,
+                    285
+                  ],
+                  [
+                    320,
+                    360,
+                    410,
+                    470,
+                    520,
+                    560,
+                    530,
+                    490,
+                    430
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Latency percentiles",
@@ -546,8 +850,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -618,7 +922,9 @@
       "maxDataPoints": 400,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -632,24 +938,78 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "4xx",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "1.5,1.8,2.0,2.3,2.1,1.9,1.7,1.6,1.4,1.3"
-        },
-        {
-          "alias": "5xx",
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "refId": "B",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "0.2,0.3,0.5,0.8,1.1,0.9,0.6,0.4,0.3,0.2"
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "4xx",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  },
+                  {
+                    "name": "5xx",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    1.5,
+                    1.8,
+                    2.0,
+                    2.3,
+                    2.1,
+                    1.9,
+                    1.7,
+                    1.6,
+                    1.4
+                  ],
+                  [
+                    0.2,
+                    0.3,
+                    0.5,
+                    0.8,
+                    1.1,
+                    0.9,
+                    0.6,
+                    0.4,
+                    0.3
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Error budget burn signals",
@@ -657,8 +1017,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -690,7 +1050,10 @@
       },
       "id": 8,
       "options": {
-        "displayLabels": ["name", "percent"],
+        "displayLabels": [
+          "name",
+          "percent"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -698,7 +1061,9 @@
         },
         "pieType": "donut",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -711,13 +1076,46 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Outcome,Requests\n2xx,842000\n3xx,71000\n4xx,18000\n5xx,3200",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Outcome",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Requests",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "2xx",
+                    "3xx",
+                    "4xx",
+                    "5xx"
+                  ],
+                  [
+                    842000,
+                    71000,
+                    18000,
+                    3200
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "HTTP response mix",
@@ -725,8 +1123,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -768,7 +1166,9 @@
         "footer": {
           "countRows": false,
           "fields": "",
-          "reducer": ["sum"],
+          "reducer": [
+            "sum"
+          ],
           "show": false
         },
         "showHeader": true
@@ -776,13 +1176,68 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Service,Owner,Deploy,Health\ncheckout-api,commerce,2026.06.01-4,healthy\ncatalog-api,commerce,2026.06.01-2,healthy\npayments-api,platform,2026.05.31-9,degraded\nidentity-api,platform,2026.06.01-1,healthy",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Service",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Owner",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Deploy",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Health",
+                    "type": "string",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "checkout-api",
+                    "catalog-api",
+                    "payments-api",
+                    "identity-api"
+                  ],
+                  [
+                    "commerce",
+                    "commerce",
+                    "platform",
+                    "platform"
+                  ],
+                  [
+                    "2026.06.01-4",
+                    "2026.06.01-2",
+                    "2026.05.31-9",
+                    "2026.06.01-1"
+                  ],
+                  [
+                    "healthy",
+                    "healthy",
+                    "degraded",
+                    "healthy"
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Service release status",
@@ -790,8 +1245,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "gridPos": {
         "h": 8,
@@ -801,42 +1256,111 @@
       },
       "id": 10,
       "options": {
-        "dedupStrategy": "none",
-        "enableLogDetails": true,
-        "prettifyLogMessage": false,
-        "showCommonLabels": false,
-        "showLabels": false,
-        "showTime": true,
-        "sortOrder": "Descending",
-        "wrapLogMessage": false
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
       },
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "levelColumn": true,
-          "lines": 40,
           "refId": "A",
-          "scenarioId": "logs"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {}
+                  },
+                  {
+                    "name": "Line",
+                    "type": "string",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000
+                  ],
+                  [
+                    "checkout request completed in 82ms",
+                    "catalog cache hit for sku=G-1842",
+                    "payment authorization retried once",
+                    "identity token refreshed",
+                    "cart promotion applied"
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
-      "title": "Recent application logs",
-      "type": "logs"
+      "title": "Recent application events",
+      "type": "table",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      }
     }
   ],
   "preload": false,
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 42,
-  "tags": ["gdev", "demo", "testdata", "application"],
+  "tags": [
+    "gdev",
+    "demo",
+    "testdata",
+    "application"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-06-01T06:00:00.000Z"
   },
   "timepicker": {},
   "timezone": "browser",

@@ -22,8 +22,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -64,7 +64,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -75,14 +77,56 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Revenue",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "612000,655000,702000,735000,718000,771000,804000"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Revenue",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    612000,
+                    655000,
+                    702000,
+                    735000,
+                    718000,
+                    771000,
+                    804000
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Daily revenue",
@@ -90,8 +134,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -132,7 +176,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -143,14 +189,56 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Orders",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "9700,10100,10800,11400,11750,12100,12850"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Orders",
+                    "type": "number",
+                    "config": {
+                      "unit": "short"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    9700,
+                    10100,
+                    10800,
+                    11400,
+                    11750,
+                    12100,
+                    12850
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Orders",
@@ -158,8 +246,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -200,7 +288,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -211,14 +301,56 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Conversion",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "3.2,3.4,3.6,3.7,3.9,4.1,4.3"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Conversion",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    3.2,
+                    3.4,
+                    3.6,
+                    3.7,
+                    3.9,
+                    4.1,
+                    4.3
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Checkout conversion",
@@ -226,8 +358,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -268,7 +400,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -279,14 +413,56 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "AOV",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "62.10,64.85,65.00,64.47,61.11,63.72,62.57"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "AOV",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    62.1,
+                    64.85,
+                    65.0,
+                    64.47,
+                    61.11,
+                    63.72,
+                    62.57
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Average order value",
@@ -294,8 +470,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -362,7 +538,9 @@
       "maxDataPoints": 400,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -376,34 +554,88 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Web",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "312000,340000,368000,390000,377000,421000,450000"
-        },
-        {
-          "alias": "Mobile",
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "refId": "B",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "210000,226000,242000,255000,251000,268000,276000"
-        },
-        {
-          "alias": "Marketplace",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "refId": "C",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "90000,89000,92000,90000,90000,82000,78000"
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Web",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  },
+                  {
+                    "name": "Mobile",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  },
+                  {
+                    "name": "Marketplace",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    312000,
+                    340000,
+                    368000,
+                    390000,
+                    377000,
+                    421000,
+                    450000
+                  ],
+                  [
+                    210000,
+                    226000,
+                    242000,
+                    255000,
+                    251000,
+                    268000,
+                    276000
+                  ],
+                  [
+                    90000,
+                    89000,
+                    92000,
+                    90000,
+                    90000,
+                    82000,
+                    78000
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Revenue by channel",
@@ -411,8 +643,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -484,13 +716,79 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Campaign,Email,Paid Search,Organic,Referral\nSpring Launch,5.1,4.4,3.7,2.8\nUpgrade Offer,4.6,3.8,3.2,2.4\nFlash Sale,6.8,5.9,4.1,3.5\nWinback,3.9,3.1,2.6,2.0",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Campaign",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Email",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Paid Search",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Organic",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Referral",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "Spring Launch",
+                    "Upgrade Offer",
+                    "Flash Sale",
+                    "Winback"
+                  ],
+                  [
+                    5.1,
+                    4.6,
+                    6.8,
+                    3.9
+                  ],
+                  [
+                    4.4,
+                    3.8,
+                    5.9,
+                    3.1
+                  ],
+                  [
+                    3.7,
+                    3.2,
+                    4.1,
+                    2.6
+                  ],
+                  [
+                    2.8,
+                    2.4,
+                    3.5,
+                    2.0
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Campaign conversion by channel",
@@ -498,8 +796,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -557,7 +855,9 @@
         "namePlacement": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -567,13 +867,48 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Step,Rate\nLanding page,100\nProduct view,64\nAdd to cart,28\nCheckout started,14\nPurchase,4.3",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Step",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Rate",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "Landing page",
+                    "Product view",
+                    "Add to cart",
+                    "Checkout started",
+                    "Purchase"
+                  ],
+                  [
+                    100,
+                    64,
+                    28,
+                    14,
+                    4.3
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Shopping funnel",
@@ -581,8 +916,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -615,7 +950,10 @@
       },
       "id": 8,
       "options": {
-        "displayLabels": ["name", "percent"],
+        "displayLabels": [
+          "name",
+          "percent"
+        ],
         "legend": {
           "displayMode": "list",
           "placement": "bottom",
@@ -623,7 +961,9 @@
         },
         "pieType": "donut",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -636,13 +976,46 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Segment,Share\nNew customers,31\nReturning,52\nWinback,9\nEnterprise,8",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Segment",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Share",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "New customers",
+                    "Returning",
+                    "Winback",
+                    "Enterprise"
+                  ],
+                  [
+                    31,
+                    52,
+                    9,
+                    8
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Customer segment mix",
@@ -650,8 +1023,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -693,7 +1066,9 @@
         "footer": {
           "countRows": false,
           "fields": "",
-          "reducer": ["sum"],
+          "reducer": [
+            "sum"
+          ],
           "show": false
         },
         "showHeader": true
@@ -701,13 +1076,68 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Region,Revenue,Orders,Conversion\nNorth America,462000,7300,4.6\nEurope,211000,3300,3.8\nAPAC,96000,1650,3.1\nLATAM,35000,600,2.7",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Region",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Revenue",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Orders",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Conversion",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "North America",
+                    "Europe",
+                    "APAC",
+                    "LATAM"
+                  ],
+                  [
+                    462000,
+                    211000,
+                    96000,
+                    35000
+                  ],
+                  [
+                    7300,
+                    3300,
+                    1650,
+                    600
+                  ],
+                  [
+                    4.6,
+                    3.8,
+                    3.1,
+                    2.7
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Regional performance",
@@ -715,15 +1145,20 @@
     }
   ],
   "preload": false,
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 42,
-  "tags": ["gdev", "demo", "testdata", "business"],
+  "tags": [
+    "gdev",
+    "demo",
+    "testdata",
+    "business"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-7d",
-    "to": "now"
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-06-01T06:00:00.000Z"
   },
   "timepicker": {},
   "timezone": "browser",

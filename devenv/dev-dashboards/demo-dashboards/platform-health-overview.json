@@ -22,8 +22,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -66,7 +66,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -77,14 +79,60 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "CPU load",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "61,64,66,71,68,72,75,69,66,63"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "CPU load",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    61,
+                    64,
+                    66,
+                    71,
+                    68,
+                    72,
+                    75,
+                    69,
+                    66
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Cluster CPU load",
@@ -92,8 +140,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -136,7 +184,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -147,14 +197,60 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Memory used",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "58,60,63,64,67,70,72,74,73,71"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Memory used",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    58,
+                    60,
+                    63,
+                    64,
+                    67,
+                    70,
+                    72,
+                    74,
+                    73
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Memory utilization",
@@ -162,8 +258,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -203,7 +299,9 @@
       "options": {
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -214,14 +312,54 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Node availability",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "99.93,99.96,99.97,99.95,99.98,99.99"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Node availability",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000
+                  ],
+                  [
+                    99.93,
+                    99.96,
+                    99.97,
+                    99.95,
+                    99.98,
+                    99.99
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Node availability",
@@ -229,8 +367,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -297,7 +435,9 @@
       "maxDataPoints": 400,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -311,46 +451,96 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "api-01 CPU",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "max": 95,
-          "min": 35,
-          "noise": 4,
           "refId": "A",
-          "scenarioId": "random_walk",
-          "spread": 2,
-          "startValue": 58
-        },
-        {
-          "alias": "api-02 CPU",
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "max": 95,
-          "min": 35,
-          "noise": 3,
-          "refId": "B",
-          "scenarioId": "random_walk",
-          "spread": 2,
-          "startValue": 63
-        },
-        {
-          "alias": "worker-01 CPU",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
-          "max": 95,
-          "min": 35,
-          "noise": 5,
-          "refId": "C",
-          "scenarioId": "random_walk",
-          "spread": 3,
-          "startValue": 51
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "api-01 CPU",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  },
+                  {
+                    "name": "api-02 CPU",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  },
+                  {
+                    "name": "worker-01 CPU",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    58,
+                    61,
+                    63,
+                    67,
+                    64,
+                    70,
+                    72,
+                    69,
+                    66
+                  ],
+                  [
+                    63,
+                    65,
+                    68,
+                    71,
+                    75,
+                    73,
+                    76,
+                    72,
+                    70
+                  ],
+                  [
+                    51,
+                    54,
+                    56,
+                    59,
+                    63,
+                    61,
+                    58,
+                    55,
+                    57
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Node CPU by host",
@@ -358,8 +548,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -426,7 +616,9 @@
       "maxDataPoints": 400,
       "options": {
         "legend": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
@@ -440,24 +632,78 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "alias": "Ingress",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "25000000,31000000,28000000,35000000,41000000,39000000,44000000,47000000,43000000,49000000"
-        },
-        {
-          "alias": "Egress",
           "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "refId": "B",
-          "scenarioId": "csv_metric_values",
-          "stringInput": "18000000,21000000,22000000,24000000,26000000,29000000,31000000,30000000,34000000,36000000"
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Ingress",
+                    "type": "number",
+                    "config": {
+                      "unit": "Bps"
+                    }
+                  },
+                  {
+                    "name": "Egress",
+                    "type": "number",
+                    "config": {
+                      "unit": "Bps"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    25,
+                    31,
+                    28,
+                    35,
+                    41,
+                    39,
+                    44,
+                    47,
+                    43
+                  ],
+                  [
+                    18,
+                    21,
+                    22,
+                    24,
+                    26,
+                    29,
+                    31,
+                    30,
+                    34
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Network throughput",
@@ -465,8 +711,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -524,7 +770,9 @@
         "namePlacement": "auto",
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -534,13 +782,48 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Mount,Utilization\n/root,64\n/var/lib/grafana,71\n/var/log,43\n/backups,82\n/cache,39",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Mount",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Utilization",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "/root",
+                    "/var/lib/grafana",
+                    "/var/log",
+                    "/backups",
+                    "/cache"
+                  ],
+                  [
+                    64,
+                    71,
+                    43,
+                    82,
+                    39
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Disk utilization by mount",
@@ -548,8 +831,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-testdata-datasource",
-        "uid": "PD8C576611E62080A"
+        "type": "datasource",
+        "uid": "grafana"
       },
       "fieldConfig": {
         "defaults": {
@@ -595,7 +878,9 @@
         "footer": {
           "countRows": false,
           "fields": "",
-          "reducer": ["sum"],
+          "reducer": [
+            "sum"
+          ],
           "show": false
         },
         "showHeader": true
@@ -603,13 +888,84 @@
       "pluginVersion": "12.4.0-pre",
       "targets": [
         {
-          "csvContent": "Service,Status,Region,Replicas,Restarts\napi,healthy,us-east,18,0\nworker,healthy,us-east,12,1\nscheduler,degraded,us-west,4,2\ningress,healthy,eu-west,8,0\ncache,healthy,us-east,6,0",
-          "datasource": {
-            "type": "grafana-testdata-datasource",
-            "uid": "PD8C576611E62080A"
-          },
           "refId": "A",
-          "scenarioId": "csv_content"
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Service",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Status",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Region",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Replicas",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Restarts",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "api",
+                    "worker",
+                    "scheduler",
+                    "ingress",
+                    "cache"
+                  ],
+                  [
+                    "healthy",
+                    "healthy",
+                    "degraded",
+                    "healthy",
+                    "healthy"
+                  ],
+                  [
+                    "us-east",
+                    "us-east",
+                    "us-west",
+                    "eu-west",
+                    "us-east"
+                  ],
+                  [
+                    18,
+                    12,
+                    4,
+                    8,
+                    6
+                  ],
+                  [
+                    0,
+                    1,
+                    2,
+                    0,
+                    0
+                  ]
+                ]
+              }
+            }
+          ]
         }
       ],
       "title": "Service inventory",
@@ -617,15 +973,20 @@
     }
   ],
   "preload": false,
-  "refresh": "30s",
+  "refresh": false,
   "schemaVersion": 42,
-  "tags": ["gdev", "demo", "testdata", "platform"],
+  "tags": [
+    "gdev",
+    "demo",
+    "testdata",
+    "platform"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-06-01T06:00:00.000Z"
   },
   "timepicker": {},
   "timezone": "browser",
