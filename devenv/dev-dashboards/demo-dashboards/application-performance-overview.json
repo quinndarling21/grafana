@@ -1,0 +1,1371 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "yellow",
+                "value": 95
+              },
+              {
+                "color": "green",
+                "value": 99
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "SLO",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    99.94,
+                    99.95,
+                    99.96,
+                    99.93,
+                    99.97,
+                    99.96,
+                    99.98
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "API availability SLO",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "yellow",
+                "value": 400
+              },
+              {
+                "color": "red",
+                "value": 750
+              }
+            ]
+          },
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Requests",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    490,
+                    520,
+                    610,
+                    680,
+                    640,
+                    700,
+                    730,
+                    710,
+                    690
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Current request rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "yellow",
+                "value": 250
+              },
+              {
+                "color": "red",
+                "value": 500
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "p95 latency",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    240,
+                    255,
+                    280,
+                    310,
+                    295,
+                    330,
+                    350,
+                    320,
+                    305
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "p95 latency",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "yellow",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 3
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "5xx rate",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    0.2,
+                    0.4,
+                    0.6,
+                    0.8,
+                    1.1,
+                    0.9,
+                    0.7,
+                    0.5,
+                    0.4
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "5xx error rate",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 15,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 900
+              }
+            ]
+          },
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 5
+      },
+      "id": 5,
+      "maxDataPoints": 400,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "checkout-api",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  },
+                  {
+                    "name": "catalog-api",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  },
+                  {
+                    "name": "payments-api",
+                    "type": "number",
+                    "config": {
+                      "unit": "reqps"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    520,
+                    560,
+                    610,
+                    650,
+                    690,
+                    710,
+                    680,
+                    640,
+                    620
+                  ],
+                  [
+                    720,
+                    760,
+                    810,
+                    860,
+                    830,
+                    900,
+                    940,
+                    910,
+                    870
+                  ],
+                  [
+                    410,
+                    430,
+                    470,
+                    510,
+                    490,
+                    530,
+                    560,
+                    520,
+                    500
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Request throughput by service",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "yellow",
+                "value": 300
+              },
+              {
+                "color": "red",
+                "value": 500
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 5
+      },
+      "id": 6,
+      "maxDataPoints": 400,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "p50",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  },
+                  {
+                    "name": "p95",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  },
+                  {
+                    "name": "p99",
+                    "type": "number",
+                    "config": {
+                      "unit": "ms"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    72,
+                    75,
+                    79,
+                    83,
+                    87,
+                    91,
+                    89,
+                    86,
+                    82
+                  ],
+                  [
+                    210,
+                    230,
+                    260,
+                    290,
+                    320,
+                    350,
+                    330,
+                    310,
+                    285
+                  ],
+                  [
+                    320,
+                    360,
+                    410,
+                    470,
+                    520,
+                    560,
+                    530,
+                    490,
+                    430
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Latency percentiles",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "yellow",
+                "value": 1
+              },
+              {
+                "color": "red",
+                "value": 3
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 13
+      },
+      "id": 7,
+      "maxDataPoints": 400,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "4xx",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  },
+                  {
+                    "name": "5xx",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000,
+                    1780290900000,
+                    1780293600000
+                  ],
+                  [
+                    1.5,
+                    1.8,
+                    2.0,
+                    2.3,
+                    2.1,
+                    1.9,
+                    1.7,
+                    1.6,
+                    1.4
+                  ],
+                  [
+                    0.2,
+                    0.3,
+                    0.5,
+                    0.8,
+                    1.1,
+                    0.9,
+                    0.6,
+                    0.4,
+                    0.3
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Error budget burn signals",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "displayLabels": [
+          "name",
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Outcome",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Requests",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "2xx",
+                    "3xx",
+                    "4xx",
+                    "5xx"
+                  ],
+                  [
+                    842000,
+                    71000,
+                    18000,
+                    3200
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "HTTP response mix",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 13
+      },
+      "id": 9,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Service",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Owner",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Deploy",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Health",
+                    "type": "string",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "checkout-api",
+                    "catalog-api",
+                    "payments-api",
+                    "identity-api"
+                  ],
+                  [
+                    "commerce",
+                    "commerce",
+                    "platform",
+                    "platform"
+                  ],
+                  [
+                    "2026.06.01-4",
+                    "2026.06.01-2",
+                    "2026.05.31-9",
+                    "2026.06.01-1"
+                  ],
+                  [
+                    "healthy",
+                    "healthy",
+                    "degraded",
+                    "healthy"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Service release status",
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 10,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {}
+                  },
+                  {
+                    "name": "Line",
+                    "type": "string",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000
+                  ],
+                  [
+                    "checkout request completed in 82ms",
+                    "catalog cache hit for sku=G-1842",
+                    "payment authorization retried once",
+                    "identity token refreshed",
+                    "cart promotion applied"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Recent application events",
+      "type": "table",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      }
+    }
+  ],
+  "preload": false,
+  "refresh": false,
+  "schemaVersion": 42,
+  "tags": [
+    "gdev",
+    "demo",
+    "testdata",
+    "application"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-06-01T06:00:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Demo - Application Performance Overview",
+  "uid": "demo-application-performance",
+  "version": 1,
+  "weekStart": ""
+}

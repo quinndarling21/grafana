@@ -1,0 +1,1169 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "yellow",
+                "value": 500000
+              },
+              {
+                "color": "green",
+                "value": 750000
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Revenue",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    612000,
+                    655000,
+                    702000,
+                    735000,
+                    718000,
+                    771000,
+                    804000
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Daily revenue",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "yellow",
+                "value": 9000
+              },
+              {
+                "color": "green",
+                "value": 12000
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Orders",
+                    "type": "number",
+                    "config": {
+                      "unit": "short"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    9700,
+                    10100,
+                    10800,
+                    11400,
+                    11750,
+                    12100,
+                    12850
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Orders",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "yellow",
+                "value": 2.5
+              },
+              {
+                "color": "green",
+                "value": 4
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Conversion",
+                    "type": "number",
+                    "config": {
+                      "unit": "percent"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    3.2,
+                    3.4,
+                    3.6,
+                    3.7,
+                    3.9,
+                    4.1,
+                    4.3
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Checkout conversion",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "yellow",
+                "value": 45
+              },
+              {
+                "color": "green",
+                "value": 60
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "AOV",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    62.1,
+                    64.85,
+                    65.0,
+                    64.47,
+                    61.11,
+                    63.72,
+                    62.57
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Average order value",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 18,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 1000000
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 5
+      },
+      "id": 5,
+      "maxDataPoints": 400,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Time",
+                    "type": "time",
+                    "config": {
+                      "interval": 2700000
+                    }
+                  },
+                  {
+                    "name": "Web",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  },
+                  {
+                    "name": "Mobile",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  },
+                  {
+                    "name": "Marketplace",
+                    "type": "number",
+                    "config": {
+                      "unit": "currencyUSD"
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    1780272000000,
+                    1780274700000,
+                    1780277400000,
+                    1780280100000,
+                    1780282800000,
+                    1780285500000,
+                    1780288200000
+                  ],
+                  [
+                    312000,
+                    340000,
+                    368000,
+                    390000,
+                    377000,
+                    421000,
+                    450000
+                  ],
+                  [
+                    210000,
+                    226000,
+                    242000,
+                    255000,
+                    251000,
+                    268000,
+                    276000
+                  ],
+                  [
+                    90000,
+                    89000,
+                    92000,
+                    90000,
+                    90000,
+                    82000,
+                    78000
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Revenue by channel",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMin": 0,
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 0,
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 5
+      },
+      "id": 6,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.9,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "text": {},
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Campaign",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Email",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Paid Search",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Organic",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Referral",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "Spring Launch",
+                    "Upgrade Offer",
+                    "Flash Sale",
+                    "Winback"
+                  ],
+                  [
+                    5.1,
+                    4.6,
+                    6.8,
+                    3.9
+                  ],
+                  [
+                    4.4,
+                    3.8,
+                    5.9,
+                    3.1
+                  ],
+                  [
+                    3.7,
+                    3.2,
+                    4.1,
+                    2.6
+                  ],
+                  [
+                    2.8,
+                    2.4,
+                    3.5,
+                    2.0
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Campaign conversion by channel",
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "yellow",
+                "value": 25
+              },
+              {
+                "color": "green",
+                "value": 50
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 13
+      },
+      "id": 7,
+      "options": {
+        "displayMode": "gradient",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "valueMode": "color"
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Step",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Rate",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "Landing page",
+                    "Product view",
+                    "Add to cart",
+                    "Checkout started",
+                    "Purchase"
+                  ],
+                  [
+                    100,
+                    64,
+                    28,
+                    14,
+                    4.3
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Shopping funnel",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "displayLabels": [
+          "name",
+          "percent"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "pieType": "donut",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Segment",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Share",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "New customers",
+                    "Returning",
+                    "Winback",
+                    "Enterprise"
+                  ],
+                  [
+                    31,
+                    52,
+                    9,
+                    8
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Customer segment mix",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 13
+      },
+      "id": 9,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "12.4.0-pre",
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "queryType": "snapshot",
+          "snapshot": [
+            {
+              "schema": {
+                "fields": [
+                  {
+                    "name": "Region",
+                    "type": "string",
+                    "config": {}
+                  },
+                  {
+                    "name": "Revenue",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Orders",
+                    "type": "number",
+                    "config": {}
+                  },
+                  {
+                    "name": "Conversion",
+                    "type": "number",
+                    "config": {}
+                  }
+                ]
+              },
+              "data": {
+                "values": [
+                  [
+                    "North America",
+                    "Europe",
+                    "APAC",
+                    "LATAM"
+                  ],
+                  [
+                    462000,
+                    211000,
+                    96000,
+                    35000
+                  ],
+                  [
+                    7300,
+                    3300,
+                    1650,
+                    600
+                  ],
+                  [
+                    4.6,
+                    3.8,
+                    3.1,
+                    2.7
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "title": "Regional performance",
+      "type": "table"
+    }
+  ],
+  "preload": false,
+  "refresh": false,
+  "schemaVersion": 42,
+  "tags": [
+    "gdev",
+    "demo",
+    "testdata",
+    "business"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2026-06-01T00:00:00.000Z",
+    "to": "2026-06-01T06:00:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Demo - Business KPI Overview",
+  "uid": "demo-business-kpis",
+  "version": 1,
+  "weekStart": ""
+}
